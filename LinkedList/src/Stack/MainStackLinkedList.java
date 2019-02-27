@@ -2,7 +2,7 @@ package Stack;
 
 import java.util.Iterator;
 
-public class MainLinkedList {
+public class MainStackLinkedList {
     public static void main(String[] args) {
         StackLinkedList<String> stack = new StackLinkedList<String>();
 
