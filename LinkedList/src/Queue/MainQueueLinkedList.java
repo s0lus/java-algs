@@ -1,5 +1,7 @@
 package Queue;
 
+import java.util.Iterator;
+
 public class MainQueueLinkedList {
     public static void main(String[] args) {
         QueueLinkedList<String> queue = new QueueLinkedList<String>();
@@ -15,5 +17,10 @@ public class MainQueueLinkedList {
         }
 
         System.out.println("In queue " + queue.size());
+
+        Iterator<String> it = queue.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
     }
 }

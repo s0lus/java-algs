@@ -5,7 +5,23 @@ import java.util.Iterator;
 public class QueueLinkedList<Item> implements Iterable<Item> {
     @Override
     public Iterator<Item> iterator() {
-        return null;
+        return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<Item> {
+
+        @Override
+        public boolean hasNext() {
+            return first != null;
+        }
+
+        @Override
+        public Item next() {
+            Item item = first.item;
+            first = first.next;
+
+            return item;
+        }
     }
 
     private class Node {
