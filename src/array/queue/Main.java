@@ -1,24 +1,24 @@
-package Stack;
+package array.queue;
 
 import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
-        Stack<String> stack = new Stack<String>(4);
+        Queue<String> queue = new Queue<String>(4);
 
         String[] str = "to be or not to - be - - that - - - is".split(" ");
 
         for (String s : str) {
             if (!s.equals("-")) {
-                stack.push(s);
-            } else if (!stack.isEmpty()) {
-                System.out.println(stack.pop());
+                queue.enqueue(s);
+            } else if (!queue.isEmpty()) {
+                System.out.println(queue.dequeue());
             }
         }
 
-        System.out.println("In stack " + stack.size());
+        System.out.println("In queue " + queue.size());
 
-        Iterator<String> it = stack.iterator();
+        Iterator<String> it = queue.iterator();
         while (it.hasNext()) {
             System.out.println(it.next());
         }

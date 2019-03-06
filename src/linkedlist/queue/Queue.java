@@ -1,8 +1,8 @@
-package Queue;
+package linkedlist.queue;
 
 import java.util.Iterator;
 
-public class QueueLinkedList<Item> implements Iterable<Item> {
+public class Queue<Item> implements Iterable<Item> {
     @Override
     public Iterator<Item> iterator() {
         return new ListIterator();

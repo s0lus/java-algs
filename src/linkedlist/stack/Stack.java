@@ -1,8 +1,8 @@
-package Stack;
+package linkedlist.stack;
 
 import java.util.Iterator;
 
-public class StackLinkedList<Item> implements Iterable<Item> {
+public class Stack<Item> implements Iterable<Item> {
 
     @Override
     public Iterator<Item> iterator() {

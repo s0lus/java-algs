@@ -1,24 +1,24 @@
-package Queue;
+package linkedlist.stack;
 
 import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
-        Queue<String> queue = new Queue<String>(4);
+        Stack<String> stack = new Stack<String>();
 
         String[] str = "to be or not to - be - - that - - - is".split(" ");
 
         for (String s : str) {
             if (!s.equals("-")) {
-                queue.enqueue(s);
-            } else if (!queue.isEmpty()) {
-                System.out.println(queue.dequeue());
+                stack.push(s);
+            } else if (!stack.isEmpty()) {
+                System.out.println(stack.pop());
             }
         }
 
-        System.out.println("In queue " + queue.size());
+        System.out.println("In stack " + stack.size());
 
-        Iterator<String> it = queue.iterator();
+        Iterator<String> it = stack.iterator();
         while (it.hasNext()) {
             System.out.println(it.next());
         }

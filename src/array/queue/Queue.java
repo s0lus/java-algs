@@ -1,4 +1,4 @@
-package Queue;
+package array.queue;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

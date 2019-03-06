@@ -1,10 +1,10 @@
-package Stack;
+package array.stack;
 
 import java.util.Iterator;
 
-public class MainStackLinkedList {
+public class Main {
     public static void main(String[] args) {
-        StackLinkedList<String> stack = new StackLinkedList<String>();
+        Stack<String> stack = new Stack<String>(4);
 
         String[] str = "to be or not to - be - - that - - - is".split(" ");
 

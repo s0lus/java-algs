@@ -1,10 +1,10 @@
-package Queue;
+package linkedlist.queue;
 
 import java.util.Iterator;
 
-public class MainQueueLinkedList {
+public class Main {
     public static void main(String[] args) {
-        QueueLinkedList<String> queue = new QueueLinkedList<String>();
+        Queue<String> queue = new Queue<String>();
 
         String[] str = "to be or not to - be - - that - - - is".split(" ");
 

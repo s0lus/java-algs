@@ -1,4 +1,4 @@
-package Stack;
+package array.stack;
 
 import java.util.Iterator;
 
