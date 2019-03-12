@@ -10,17 +10,16 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         while (!scanner.hasNext("done")) {
-            String[] input = scanner.next().split(" ");
+            String[] input = scanner.nextLine().split(" ");
 
             int p = Integer.parseInt(input[0]);
             int q = Integer.parseInt(input[1]);
 
-            if (uf.connected(p, q))
+            if (uf.connected(p, q)) {
                 continue;
+            }
 
             uf.union(p, q);
-
-            System.out.println(p + " " + q);
         }
 
         System.out.println("Count of the components: " + uf.count());

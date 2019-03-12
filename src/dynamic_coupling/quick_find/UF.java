@@ -28,11 +28,20 @@ public class UF {
 
     // Finding ID of the component for p
     public int find(int p) {
-
+        return id[p];
     }
 
     // Adding connection between p and q
     public void union(int p, int q) {
+        int pId = id[p];
+        int qId = id[q];
 
+        for (int i = 0; i < id.length; i++) {
+            if (id[i] == pId) {
+                id[p] = qId;
+            }
+        }
+
+        count--;
     }
 }
