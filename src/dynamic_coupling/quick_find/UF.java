@@ -7,7 +7,7 @@ public class UF {
     // Count of components
     private int count;
 
-    // Init N nodes
+    // Init 0 to N - 1 nodes
     public UF(int N) {
         count = N;
 
