@@ -2,7 +2,7 @@ package sorting.merge;
 
 import sorting.Base;
 
-public class Merge extends Base {
+public class MergeDesc extends Base {
     private Comparable[] aux;
 
     public void merge(Comparable[] a, int lo, int mid, int hi) {

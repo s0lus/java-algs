@@ -2,13 +2,16 @@ package sorting.merge;
 
 public class Main {
     public static void main(String[] args) {
-        String[] array = {"e", "e", "g", "m", "r", "a", "c", "e", "r", "t"};
+        String[] array1 = {"e", "e", "g", "m", "r", "a", "c", "e", "r", "t"};
 
-        int len = array.length;
+        MergeDesc mergeDesc = new MergeDesc();
+        mergeDesc.sort(array1, 0, array1.length - 1);
+        mergeDesc.show(array1);
 
-        Merge merge = new Merge();
-        merge.sort(array, 0, len - 1);
-        merge.show(array);
+        String[] array2 = {"e", "e", "g", "m", "r", "a", "c", "e", "r", "t"};
 
+        MergeAsc mergeAsc = new MergeAsc();
+        mergeAsc.sort(array2);
+        mergeAsc.show(array2);
     }
 }
