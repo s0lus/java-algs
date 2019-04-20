@@ -56,4 +56,29 @@ public class MaxPQ<Key extends Comparable<Key>> {
         pq[i] = pq[j];
         pq[j] = temp;
     }
+
+    private void swim(int k) {
+        while (k > 1 && less(k / 2, k)) {
+            exchange(k / 2, k);
+            k = k / 2;
+        }
+    }
+
+    private void sink(int k) {
+        while (2 * k <= size) {
+            int j = 2 * k;
+
+            if (j < size && less(j, j + 1)) {
+                j++;
+            }
+
+            if (!less(k, j)) {
+                break;
+            }
+
+            exchange(k, j);
+
+            k = j;
+        }
+    }
 }
