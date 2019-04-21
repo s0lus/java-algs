@@ -24,9 +24,9 @@ public class MaxPQ<Key extends Comparable<Key>> {
         swim(size);
     }
 
-    Key max() {
-
-    }
+//    Key max() {
+//
+//    }
 
     Key delMax() {
         // Max key from the root
