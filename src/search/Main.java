@@ -1,5 +1,6 @@
 package search;
 
+import search.binary_search.BinarySearch;
 import search.sequental_search.UnorderedLinkedList;
 
 public class Main {
@@ -15,6 +16,18 @@ public class Main {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + ' ');
             System.out.println(unorderedLinkedList.get(array[i]));
+        }
+
+        System.out.println("=======================");
+
+        BinarySearch binarySearch = new BinarySearch(array.length);
+        for (int i = 0; i < array.length; i++) {
+            binarySearch.put(array[i], i);
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + ' ');
+            System.out.println(binarySearch.get(array[i]));
         }
     }
 }
