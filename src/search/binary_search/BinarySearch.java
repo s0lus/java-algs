@@ -14,7 +14,7 @@ public class BinarySearch<Key extends Comparable<Key>, Value> implements ST {
 
     @Override
     public void put(Object key, Object value) {
-        int i = rank(key);
+        int i = rank((Key)key);
         if (i < N && keys[i].compareTo((Key)key) == 0) {
             values[i] = (Value)value;
 
@@ -74,6 +74,7 @@ public class BinarySearch<Key extends Comparable<Key>, Value> implements ST {
         }
     }
 
+    // Iterative
     public int rank(Key key) {
         int lo = 0;
         int hi = N - 1;
@@ -92,5 +93,23 @@ public class BinarySearch<Key extends Comparable<Key>, Value> implements ST {
         }
 
         return lo;
+    }
+
+    // Recursive
+    public int rankRecursive(Key key, int lo, int hi) {
+        if (hi < lo) {
+            return hi;
+        }
+
+        int mid = lo + (hi - lo) / 2;
+
+        int cmp = key.compareTo(keys[mid]);
+        if (cmp < 0) {
+            return rankRecursive(key, lo, mid - 1);
+        } else if (cmp > 0) {
+            return rankRecursive(key, mid + 1, hi);
+        } else {
+            return mid;
+        }
     }
 }
