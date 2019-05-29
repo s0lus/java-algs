@@ -90,6 +90,50 @@ public class BST<Key extends Comparable<Key>, Value> {
             return max(x.right);
         }
 
+        private Node floor(Node x, Key key) {
+            if (x == null) {
+                return null;
+            }
+
+            int cmp = key.compareTo(x.key);
+            if (cmp == 0) {
+                return x;
+            }
+
+            if (cmp < 0) {
+                return floor(x.left, key);
+            }
+
+            Node t = floor(x.right, key);
+            if (t != null) {
+                return t;
+            } else {
+                return x;
+            }
+        }
+
+        private Node ceiling(Node x, Key key) {
+            if (x == null) {
+                return null;
+            }
+
+            int cmp = key.compareTo(x.key);
+            if (cmp == 0) {
+                return x;
+            }
+
+            if (cmp > 0) {
+                return ceiling(x.right, key);
+            }
+
+            Node t = ceiling(x.left, key);
+            if (t != null) {
+                return t;
+            } else {
+                return x;
+            }
+        }
+
         public Value get(Key key) {
             return get(root, key);
         }
@@ -107,6 +151,24 @@ public class BST<Key extends Comparable<Key>, Value> {
             return max(root).key;
         }
 
-        // TODO: floor/ceiling/select/rank/delete/deleteMin/deleteMax/keys
+        public Key floor(Key key) {
+            Node x = floor(root, key);
+            if (x == null) {
+                return null;
+            }
+
+            return x.key;
+        }
+
+        public Key ceiling(Key key) {
+            Node x = ceiling(root, key);
+            if (x == null) {
+                return null;
+            }
+
+            return x.key;
+        }
+
+        // TODO: select/rank/delete/deleteMin/deleteMax/keys
     }
 }
