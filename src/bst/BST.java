@@ -74,6 +74,22 @@ public class BST<Key extends Comparable<Key>, Value> {
             return x;
         }
 
+        private Node min(Node x) {
+            if (x.left == null) {
+                return x;
+            }
+
+            return min(x.left);
+        }
+
+        private Node max(Node x) {
+            if (x.right == null) {
+                return x;
+            }
+
+            return max(x.right);
+        }
+
         public Value get(Key key) {
             return get(root, key);
         }
@@ -83,6 +99,14 @@ public class BST<Key extends Comparable<Key>, Value> {
             root = put(root, key, value);
         }
 
-        // TODO: min/max/floor/ceiling/select/rank/delete/deleteMin/deleteMax/keys
+        public Key min() {
+            return min(root).key;
+        }
+
+        public Key max() {
+            return max(root).key;
+        }
+
+        // TODO: floor/ceiling/select/rank/delete/deleteMin/deleteMax/keys
     }
 }
