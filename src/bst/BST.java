@@ -166,6 +166,17 @@ public class BST<Key extends Comparable<Key>, Value> {
             }
         }
 
+        private Node deleteMin(Node x) {
+            if (x.left == null) {
+                return x.right;
+            }
+
+            x.left = deleteMin(x.left);
+            x.N = size(x.left) + size(x.right) + 1;
+
+            return x;
+        }
+
         public Value get(Key key) {
             return get(root, key);
         }
@@ -209,6 +220,10 @@ public class BST<Key extends Comparable<Key>, Value> {
             return rank(key, root);
         }
 
-        // TODO: delete/deleteMin/deleteMax/keys
+        public void deleteMin() {
+            root = deleteMin(root);
+        }
+
+        // TODO: delete/deleteMax/keys
     }
 }
