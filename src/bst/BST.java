@@ -314,7 +314,7 @@ public class BST<Key extends Comparable<Key>, Value> {
             Queue<Key> queue = new Queue<Key>(size());
             keys(root, queue, lo, hi);
 
-            return queue;
+            return (Iterable<Key>) queue;
         }
     }
 }
